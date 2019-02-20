@@ -1,0 +1,172 @@
+@import '../common.scss';
+
+div.main-panel{
+    position: relative;
+    left:50%;
+    transform:translateX(-50%);
+    // min-height:300px;
+    width: 1500px;
+    margin-top:150px;
+    padding:15px;
+    // border:1px red solid;   
+    // box-shadow: 0px 0px 5px #888888;
+
+    div.cell{
+        position: relative;
+        display: inline-block;
+        height:300px;
+        width:467px;
+        // border:1px solid hotpink;
+        border-radius:10px;
+        margin:10px;
+        padding:13px;
+        vertical-align:top;
+        box-shadow:0px 0px 5px #888888;
+        div{
+            float:left;
+        }
+        div.picture{
+            height:170px;
+            width:150px;
+            // border:1px red solid;
+            box-shadow:0 0 5px #888888;
+            cursor: pointer;
+            img.picture{
+                height:100%;
+                width:100%;
+            }
+        }
+        div.avatar{
+            height:58px;
+            width:58px;
+            // border:1px blue dotted;
+            margin-top:0px;
+            margin-left:10px;
+            cursor: pointer;
+            img.avatar{
+                height:100%;
+                width:100%;
+                box-shadow: 0px 0px 1px #888888;
+                // border:1px solid blue;  
+            }
+        }
+        div.title{
+            height:30px;
+            width: 150px;
+            // margin-top:10px;
+            margin-left:20px;
+            // border:1px red dotted;
+            cursor: pointer;            
+            font: {
+                size:1.5em;
+                weight:700;
+            }
+        }
+        div.nickname{
+            @extend div.title;
+            cursor: pointer;            
+            font: {
+                size:1em;
+                weight:600;
+            }
+            margin-top:-2px;
+        }
+        div.j-key{
+            height:30px;
+            margin-left:10px;
+            margin-top:10px;
+            ul{
+                list-style:none;
+                padding:0px;
+                li{
+                    display: inline-block;
+                    // border:1px blue dotted;
+                    margin-right:10px;
+                    letter-spacing:1px;
+                    cursor: pointer;
+                    font: {
+                        size:1.2em;
+                        weight:1000;
+                    }
+                    &:last-child{
+                        margin:0;
+                    }
+                }
+            }
+        }
+        div.info{
+            @extend div.j-key;
+            margin-top:0px;
+            ul > li{
+                margin-right:16px;
+                cursor: pointer;
+                font: {
+                    size:1.0em;
+                    weight:500 !important;
+                }
+                letter-spacing: normal;
+            }
+        }
+        div.time{
+            @extend div.j-key;       
+            margin-top:0px;
+            // border:1px red solid;
+            ul.time{
+                li{
+                    cursor: pointer;
+                }
+                font: {
+                    size:0.8em;
+                }
+            }
+        }
+        hr.hr{
+            position: absolute;
+            bottom:85px;
+            border:0.5px #AAAAAA solid;
+            width:437px;
+            height:0;
+        }
+        div.resume{
+            width:437px;
+            height:70px;
+            // border:1px blue dotted;
+            margin-top:20px;
+            line-height:1.6em;
+            font-size:0.9em;
+            // letter-spacing: 1px;
+            cursor: pointer;
+        }
+        div.jinfo{
+            width:437px;
+            height:20px;
+            ul.jinfo{
+                position: relative;
+                list-style: none;
+                // border:1px blue solid;
+                width:100%;
+                height:100%;
+                // padding-left:10px;
+                li{
+                    cursor: pointer;
+                    position: absolute;
+                    &:first-child{
+                        left:0px;
+                    }
+                    &:last-child{
+                        right:0px;
+                    }
+                    &:nth-child(2){
+                        left:50%;
+                        transform:translateX(-50%);
+                    }
+                    // margin: {
+                    //     right:52px;
+                    // }
+                }
+            }
+        }
+    }
+}
+
+

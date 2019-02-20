@@ -1,0 +1,209 @@
+@charset "UTF-8";
+[shouldShow="no"] {
+  display: none !important;
+}
+
+.trangle {
+  position: absolute;
+  right: -51px;
+  top: -51px;
+  width: 100px;
+  height: 100px;
+  border-left: 20px solid  transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid orange;
+  transform: rotate(45deg);
+}
+.trangle span {
+  position: relative;
+  display: inline-block;
+  bottom: -98%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* border:1px blue solid; */
+  font-size: 0.9em;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  height: 100px;
+  width: 100px;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+.scroll-to-top img {
+  width: 100%;
+  height: 100%;
+}
+
+.body-container {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*********************之后将上面的移动到单独的文件夹内****************/
+nav.indexNav {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  height: 65px;
+  width: 1800px;
+  border: 1px #444444 solid;
+  background: #444444;
+  /* #444444 */
+}
+nav.indexNav ul.nav-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1600px;
+  height: 100%;
+  list-style: none;
+  padding: 0px;
+}
+nav.indexNav ul.nav-container > li {
+  color: white;
+  position: relative;
+  top: 50%;
+  display: inline-block;
+  min-width: 100px;
+  vertical-align: top;
+  margin: 0px 40px;
+  text-align: center;
+  font-size: 1em;
+  transform: translateY(-50%);
+}
+nav.indexNav ul.nav-container > li > span {
+  cursor: pointer;
+  transition: color .2s;
+}
+nav.indexNav ul.nav-container > li > span:hover {
+  color: orangered;
+}
+nav.indexNav ul.nav-container > li > input {
+  width: 230px;
+  height: 30px;
+  color: #3c3c3c;
+  font-size: 0.8em;
+  border: .5px white solid;
+  border-radius: 3px;
+  transition: box-shadow .2s,border .2s;
+}
+nav.indexNav ul.nav-container > li > input:focus {
+  outline: none;
+  border: 0;
+  box-shadow: 0 0 5px orangered inset;
+}
+nav.indexNav ul.nav-container > li > input + span {
+  font-size: 1.1em;
+  display: inline-block;
+  height: 30px;
+  margin-left: 5px;
+}
+nav.indexNav ul.nav-container > li:first-child img {
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+}
+nav.indexNav ul.nav-container > li:last-child {
+  position: absolute;
+  right: 30px;
+}
+nav.indexNav ul.nav-container > li:last-child img {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+nav.indexNav ul.nav-container > li:last-child a.nickname {
+  margin-left: 10px;
+}
+nav.indexNav ul.nav-container > li:last-child a.nickname:link {
+  color: white !important;
+  text-decoration: none;
+}
+nav.indexNav ul.nav-container > li:last-child a.nickname:visited {
+  color: white;
+  text-decoration: none;
+}
+nav.indexNav ul.nav-container > li:last-child a.nickname:hover {
+  color: white;
+  text-decoration: none;
+}
+nav.indexNav ul.nav-container > li:last-child a.nickname:active {
+  color: white;
+  text-decoration: none;
+}
+nav.indexNav ul.nav-container > li:last-child div.menu {
+  position: absolute;
+  bottom: -260px;
+  height: 250px;
+  width: 250px;
+  background: rgba(68, 68, 68, 0.6);
+}
+nav.indexNav ul.nav-container > li:last-child div.menu div.avatar {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+}
+nav.indexNav ul.nav-container > li:last-child div.menu div.avatar img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+}
+nav.indexNav ul.nav-container > li:last-child div.menu div.nickname {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30px;
+  width: 100px;
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+nav.indexNav ul.nav-container > li:last-child div.menu div.p-keywords {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+}
+nav.indexNav ul.nav-container > li:last-child div.menu div.p-keywords ul.p-keywords {
+  display: inline-block;
+  padding: 0px;
+  list-style: none;
+  height: 100%;
+  text-align: center;
+}
+nav.indexNav ul.nav-container > li:last-child div.menu div.p-keywords ul.p-keywords li {
+  display: inline-block;
+  width: 60px;
+  font-size: 1em;
+}
+nav.indexNav ul.nav-container > li:last-child div.menu div.p-keywords ul.p-keywords li:last-child {
+  position: static;
+}
+nav.indexNav ul.nav-container > li:last-child div.menu div.btns {
+  height: 60px;
+  width: 100%;
+}
+nav.indexNav ul.nav-container > li:last-child div.menu div.btns a {
+  margin: 5px;
+  border: 0px;
+}
+nav.indexNav ul.nav-container > li:last-child div.menu div.btns a:link, nav.indexNav ul.nav-container > li:last-child div.menu div.btns a:visited, nav.indexNav ul.nav-container > li:last-child div.menu div.btns a:hover, nav.indexNav ul.nav-container > li:last-child div.menu div.btns a:active {
+  background: #ffff00;
+}
+nav.indexNav ul.nav-container > li:last-child div.menu div.btns a:last-child {
+  background: orangered;
+}
+
+/*# sourceMappingURL=nav.css.map */

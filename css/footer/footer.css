@@ -1,0 +1,9 @@
+footer#footer{
+    height:100px;
+    width:1800px;
+    background: #3c3c3c;
+    color:white;
+    text-align:center;
+    font-size:1.2em;
+    line-height:100px;
+}

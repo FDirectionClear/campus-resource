@@ -1,0 +1,260 @@
+@charset "UTF-8";
+div.main-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 1400px;
+  width: 1400px;
+}
+
+div.long-background {
+  position: relative;
+  height: 230px;
+  width: 100%;
+  background: url(../images/bilibili空间背景图.png) no-repeat;
+  background-size: 100% 100%;
+}
+div.long-background div.avatars {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  width: 500px;
+}
+div.long-background div.avatars * {
+  float: left;
+}
+div.long-background div.avatars img.avatar {
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+}
+div.long-background div.avatars div.nickname {
+  height: 30px;
+  width: 200px;
+  margin-top: 5px;
+  padding-left: 10px;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+div.long-background div.avatars ul.p-keywords {
+  padding: 0px;
+  list-style: none;
+  margin-top: 3px;
+}
+div.long-background div.avatars ul.p-keywords li {
+  margin-left: 10px;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+div.homepage-nav {
+  height: 65px;
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 2px 2px #cccccc;
+  background-color: #fff;
+}
+div.homepage-nav ul.homepage-nav {
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  padding-left: 30px;
+}
+div.homepage-nav ul.homepage-nav li {
+  float: left;
+  height: 100%;
+  margin-left: 20px;
+  padding-top: 20px;
+  vertical-align: top;
+}
+div.homepage-nav ul.homepage-nav li a:link, div.homepage-nav ul.homepage-nav li a:visited, div.homepage-nav ul.homepage-nav li a:active {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: black;
+}
+div.homepage-nav ul.homepage-nav li:hover {
+  background: gold;
+}
+div.homepage-nav ul.homepage-nav li:nth-child(4):hover, div.homepage-nav ul.homepage-nav li:last-child:hover {
+  background: #ffff99;
+  color: black;
+}
+div.homepage-nav ul.homepage-nav li input {
+  border: 1px grey solid;
+  height: 2.2em;
+  margin-top: -3px;
+}
+div.homepage-nav ul.homepage-nav li button {
+  margin-top: -3px;
+}
+
+div.content-panel {
+  width: 100%;
+  border: 1px #fff solid;
+  box-shadow: 0 0 5px #cccccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+div.content-panel div.overview-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 650px;
+  width: 1300px;
+  margin: 15px 0;
+  padding-left: 18px;
+}
+div.content-panel div.overview-container div.overview-box {
+  vertical-align: top;
+  position: relative;
+  float: left;
+  height: 250px;
+  width: 400px;
+  box-shadow: 0 0 5px #cccccc;
+  margin: 10px;
+  transition: width 1s,height 1s;
+  overflow: hidden;
+}
+div.content-panel div.overview-container div.overview-box:first-child {
+  position: relative;
+  border: 5px #cccccc dotted;
+  cursor: pointer;
+}
+div.content-panel div.overview-container div.overview-box:first-child span.glyphicon {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  height: 100px;
+  width: 100px;
+  font-size: 70px;
+  line-height: 100px;
+  text-align: center;
+  transition: all .5s;
+}
+div.content-panel div.overview-container div.overview-box:first-child span.explain {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 60%);
+  color: rgba(80, 80, 80, 0);
+  font-size: 1.5em;
+  transition: all .5s;
+}
+div.content-panel div.overview-container div.overview-box:first-child:hover span.glyphicon {
+  top: 40%;
+}
+div.content-panel div.overview-container div.overview-box:first-child:hover span.explain {
+  color: #505050;
+  display: inline;
+}
+div.content-panel div.overview-container div.overview-box * {
+  float: left;
+}
+div.content-panel div.overview-container div.overview-box span.glyphicon-remove.delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 16px;
+  width: 16px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+div.content-panel div.overview-container div.overview-box span.glyphicon-remove.delete:hover {
+  color: orangered;
+  transform: rotate(180deg);
+}
+div.content-panel div.overview-container div.overview-box div.picture {
+  height: 135px;
+  width: 120px;
+  margin-left: 10px;
+}
+div.content-panel div.overview-container div.overview-box div.picture img.picture {
+  height: 100%;
+  width: 100%;
+}
+div.content-panel div.overview-container div.overview-box div.pr {
+  height: 135px;
+  width: 245px;
+  transform: translateY(15px);
+  margin-left: 15px;
+}
+div.content-panel div.overview-container div.overview-box div.pr h3.title {
+  padding-left: 20px;
+  font-weight: bold;
+}
+div.content-panel div.overview-container div.overview-box div.pr ul.keywords {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+div.content-panel div.overview-container div.overview-box div.pr ul.keywords li {
+  margin: 5px 10px -10px 0px;
+  font-weight: bold;
+  color: #ff6633;
+}
+div.content-panel div.overview-container div.overview-box div.pr ul.date {
+  padding-left: 20px;
+  list-style: none;
+  margin-top: 15px;
+}
+div.content-panel div.overview-container div.overview-box div.resume {
+  height: 90px;
+  width: 380px;
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+div.content-panel div.overview-container div.overview-box div.jinfo {
+  width: 380px;
+  border: 1px solid dotted;
+  margin-left: 10px;
+}
+div.content-panel div.overview-container div.overview-box div.jinfo ul.jinfo {
+  list-style: none;
+  width: 380px;
+}
+div.content-panel div.overview-container div.overview-box div.jinfo ul.jinfo li {
+  font-size: 0.8em;
+  margin-right: 20px;
+}
+div.content-panel div.overview-container div.overview-box div.jinfo ul.jinfo li:last-child {
+  float: right;
+  margin-right: 0;
+}
+
+ul.level-1 li {
+  position: relative;
+}
+
+ul.level-2 {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  right: 0px;
+  border: 1px gray solid;
+  width: 177.3px;
+  list-style: none;
+  padding: 0;
+  background: white;
+  border-radius: 5px;
+  padding-top: 10px;
+}
+ul.level-2 li {
+  height: 25.09px;
+  padding-left: 15px;
+}
+ul.level-2 li:hover {
+  background: #EEEEEE;
+}
+ul.level-2 li a:link, ul.level-2 li a:visited, ul.level-2 li a:hover, ul.level-2 li a:active {
+  display: block;
+  text-decoration: none;
+  background: transparent;
+}
+
+/*# sourceMappingURL=homepage.css.map */

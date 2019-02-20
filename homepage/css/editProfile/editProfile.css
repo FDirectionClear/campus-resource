@@ -1,0 +1,113 @@
+@charset "UTF-8";
+div.overview-container > div {
+  display: inline-block;
+  vertical-align: top;
+}
+div.overview-container div.left {
+  height: 645px;
+  width: 235px;
+  margin-left: -18px;
+}
+div.overview-container div.right {
+  left: 245px;
+  width: 1055px;
+}
+div.overview-container form div.tr {
+  margin-bottom: 15px;
+}
+div.overview-container form div.tr span.th {
+  display: inline-block;
+  width: 120px;
+  font-weight: 700;
+}
+div.overview-container form div.tr span.td {
+  margin-left: 0px;
+}
+div.overview-container form div.p-explain span, div.overview-container form div.speciality span {
+  vertical-align: top;
+}
+div.overview-container form div.p-explain textarea, div.overview-container form div.speciality textarea {
+  resize: none;
+}
+div.overview-container form div.submit {
+  text-align: center;
+}
+
+div.vertical-nav {
+  position: fixed;
+  height: 200px;
+  width: 235px;
+  top: 206px;
+  left: 215px;
+  z-index: 500;
+}
+div.vertical-nav a {
+  height: 50px;
+  line-height: 50px;
+}
+div.vertical-nav a:first-child {
+  background: rgba(230, 230, 230, 0.8);
+}
+
+form[name="change-avatar"]:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+form[name="change-avatar"] div.change-avatar-box {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 300px;
+}
+form[name="change-avatar"] div {
+  float: left;
+  margin: 20px;
+}
+form[name="change-avatar"] div.avatar-input {
+  border: 1px gray solid;
+  border-radius: 15px;
+  height: 150px;
+  width: 150px;
+  margin-top: 50px;
+  background: url(../../../images/上传头像.png);
+  background-size: 70%,70%;
+  background-position: center;
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  transition: background-color .5s;
+  opacity: .7;
+}
+form[name="change-avatar"] div.avatar-input:hover {
+  background-color: #888888;
+}
+form[name="change-avatar"] div.avatar-input input[name="newavatar"] {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+form[name="change-avatar"] div.cut-off {
+  background: gray;
+  height: 210px;
+  width: 1px;
+}
+form[name="change-avatar"] div.overview-avatar {
+  height: 100px;
+  width: 100px;
+  margin-top: 60px;
+}
+form[name="change-avatar"] div.overview-avatar img.current-avatar {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #888888;
+}
+form[name="change-avatar"] div.updata-avatar {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*# sourceMappingURL=editProfile.css.map */

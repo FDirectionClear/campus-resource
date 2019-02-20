@@ -1,0 +1,208 @@
+div.resume-nav {
+  height: 65px;
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 2px 2px #cccccc;
+}
+div.resume-nav ul.resume-nav {
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  padding-left: 30px;
+}
+div.resume-nav ul.resume-nav li {
+  float: left;
+  height: 100%;
+  margin-left: 20px;
+  padding-top: 20px;
+  vertical-align: top;
+  font-size: 1.5em;
+}
+div.resume-nav ul.resume-nav li:last-child {
+  cursor: pointer;
+}
+div.resume-nav ul.resume-nav li input[type="text"] {
+  color: red;
+}
+
+div.resume-content {
+  position: relative;
+  width: 1400px;
+  margin: 20px auto;
+  border: 1px #fff solid;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #cccccc;
+}
+div.resume-content div.inner-contents {
+  position: relative;
+  z-index: 10;
+  width: 1200px;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 1px #888888;
+}
+div.resume-content div.inner-contents.xm-experience {
+  position: relative;
+  z-index: 1;
+}
+div.resume-content div.inner-contents .clearbt {
+  margin-bottom: 0px;
+}
+div.resume-content div.inner-contents form.basic-info {
+  position: relative;
+  margin-top: 50px;
+}
+div.resume-content div.inner-contents form.basic-info .tr {
+  margin: 10px auto  50px 180px;
+}
+div.resume-content div.inner-contents form.basic-info .tr:last-child {
+  margin: auto;
+  height: 50px;
+}
+div.resume-content div.inner-contents form.basic-info .tr:last-child > input[type="submit"] {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  width: 200px;
+  font-size: 1.3em;
+}
+div.resume-content div.inner-contents form.basic-info .tr:last-child > div:first-child {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 410px;
+  display: inline-block;
+}
+div.resume-content div.inner-contents form.basic-info .tr:last-child > div:first-child input[type="submit"] {
+  height: 50px;
+  width: 200px;
+  font-size: 1.3em;
+}
+div.resume-content div.inner-contents form.basic-info .th {
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 0 0 0 30px;
+}
+div.resume-content div.inner-contents form.basic-info .td {
+  font-size: 1.5em;
+  margin: 0px;
+}
+div.resume-content div.inner-contents form.basic-info .td .input {
+  width: 350px;
+  margin: 10px 0 0 30px;
+}
+div.resume-content div.inner-contents form.basic-info .td .select {
+  width: 350px;
+  margin: 10px 0 0 30px;
+}
+div.resume-content div.inner-contents form.basic-info .td .text {
+  width: 650px;
+  height: 150px;
+  margin: 10px 0 0 30px;
+}
+div.resume-content div.inner-contents form.basic-info div.radio {
+  font-size: 1.5em;
+  margin-right: 30px;
+}
+div.resume-content div.inner-contents form.basic-info div.picture {
+  position: absolute;
+  top: 0px;
+  right: 100px;
+  height: 250px;
+  width: 200px;
+  margin: 0px;
+}
+div.resume-content div.inner-contents form.basic-info div.picture img.overlook {
+  display: block;
+  height: 200px;
+  width: 150px;
+  box-shadow: 0 0 2px #888888;
+  margin: auto;
+}
+div.resume-content div.inner-contents form.basic-info div.picture a.file {
+  position: relative;
+  display: block;
+  height: 40px;
+  width: 100px;
+  margin: 10px auto;
+}
+div.resume-content div.inner-contents form.basic-info div.picture a.file span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+div.resume-content div.inner-contents form.basic-info div.picture a.file input[type="file"] {
+  display: block;
+  color: black;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.main-container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+ul.level-1 li {
+  position: relative;
+}
+
+ul.level-2 {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  right: 0px;
+  border: 1px gray solid;
+  width: 177.3px;
+  list-style: none;
+  padding: 0;
+  background: white;
+  border-radius: 5px;
+  padding-top: 10px;
+}
+ul.level-2 li {
+  height: 25.09px;
+  padding-left: 15px;
+}
+ul.level-2 li:hover {
+  background: #EEEEEE;
+}
+ul.level-2 li a:link, ul.level-2 li a:visited, ul.level-2 li a:hover, ul.level-2 li a:active {
+  display: block;
+  text-decoration: none;
+  background: transparent;
+}
+
+.submit-state-tip {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 25px;
+  width: 200px;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  line-height: 25px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transition: bottom 1s, background 1s;
+}
+
+@keyframes myfirst {
+  100% {
+    display: block;
+    bottom: 100px;
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+/*# sourceMappingURL=subresume.css.map */

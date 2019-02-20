@@ -1,0 +1,41 @@
+.select-bar {
+  position: absolute; }
+
+.select-bar-a, .select-bar-b {
+  width: 1800px;
+  box-shadow: 0 1px 1px #DDDDDD; }
+  .select-bar-a ul.large-category, .select-bar-b ul.large-category, .select-bar-b ul.small-category {
+    display: inline-block;
+    position: relative;
+    min-height: 100%;
+    width: 1400px;
+    list-style: none;
+    padding: 0;
+    transform: translateX(100px); }
+    .select-bar-a ul.large-category li, .select-bar-b ul.large-category li, .select-bar-b ul.small-category li {
+      display: inline-block;
+      height: 100%;
+      width: 150px;
+      text-align: center;
+      line-height: 45px;
+      letter-spacing: 0.3em;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin-left: 0px;
+      margin-right: 0px; }
+      .select-bar-a ul.large-category li:hover, .select-bar-b ul.large-category li:hover, .select-bar-b ul.small-category li:hover {
+        background: rgba(238, 238, 238, 0.6); }
+  .select-bar-a div.angle-select, .select-bar-b div.angle-select {
+    position: relative;
+    display: inline-block;
+    z-index: 10; }
+    .select-bar-a div.angle-select input, .select-bar-b div.angle-select input {
+      margin-left: 30px; }
+
+.select-bar-b {
+  min-height: 50px;
+  box-shadow: 0 0px 1px #888888; }
+  .select-bar-b ul.small-category li {
+    font-size: 1em; }
+
+/*# sourceMappingURL=selectBar.css.map */

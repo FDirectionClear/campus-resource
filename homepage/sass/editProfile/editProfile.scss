@@ -1,0 +1,139 @@
+div.overview-container{
+    & > div{
+        // position: absolute;
+        display:inline-block;
+        vertical-align: top;    
+    }
+    div.left{
+        height:645px;
+        width:235px;
+        // border:1px green solid;
+        margin-left:-18px;
+        
+    }
+    div.right{
+        // border:1px blue solid;
+        left:245px;
+        // height:100%;
+        width:1055px;
+        // vertical-align: 
+    }
+    form{
+        div.tr{
+            // &:nth-child(2n-1){
+            //     // border:1px red solid;
+            // }
+            // &:nth-child(2n){
+            //     // border:1px blue solid;
+            // }
+            margin-bottom:15px;
+            span.th{
+                display: inline-block;
+                width:120px;
+                // border:2px hotpink dotted;
+                font: {
+                    weight:700;
+                }
+            }
+            span.td{
+                margin-left:0px;
+            }
+        }
+        div.p-explain,div.speciality{
+            span{
+                vertical-align: top;
+            }
+            textarea{
+                resize:none;
+            }
+        }
+        div.submit{
+            text-align: center;
+        }
+    }
+}
+div.vertical-nav{
+    // display:none;
+    position:fixed;
+    height:200px;
+    width:235px;
+    top:206px;
+    left:215px;
+    z-index:500;
+    a{
+        &:first-child{
+            background:rgba(230,230,230,.8);
+            // background:rgba(255,236,139,.8);
+        }
+        height:50px;
+        line-height: 50px;
+    }
+}
+
+form[name = "change-avatar"]{
+    // border:2px hotpink solid;
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    } 
+    div.change-avatar-box{
+        position: relative;
+        left:50%;
+        transform:translateX(-50%);
+        min-height:300px;
+        // border:2px skyblue solid;
+    }  
+    div{
+        // display: inline-block;
+        float:left;
+        margin:20px;
+    }
+    div.avatar-input{
+        border:1px gray solid;
+        border-radius:15px;
+        height:150px;
+        width:150px;
+        margin-top:50px;
+        background:url(../../../images/上传头像.png);
+        background-size:70%,70%;
+        background-position:center;
+        background-color:#cccccc;
+        background-repeat: no-repeat;
+        transition:background-color .5s;
+        opacity: .7;
+        &:hover{
+            background-color:#888888;
+        }
+        input[name = "newavatar"]{
+            cursor: pointer;
+            height:100%;
+            width:100%;
+            opacity: 0;
+        }
+    }
+    div.cut-off{
+        // border:1px gray solid;
+        background:gray;
+        height:210px;
+        width:1px;
+    }
+    div.overview-avatar{
+        // border:1px blue solid;
+        height:100px;
+        width:100px;
+        margin-top:60px;
+        img.current-avatar{
+            height:100%;
+            width:100%;
+            border-radius:50%;
+            box-shadow:0 0 5px #888888;
+        }
+    }
+    div.updata-avatar{
+        position: absolute;
+        bottom:0px;
+        left:50%;
+        transform:translateX(-50%);
+    }
+}

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/cleardefault.css">
+    <link rel="stylesheet" href="../css/common.css"">
+    <link rel="stylesheet" href="../css/nav/nav.css">
+    <link rel="stylesheet" href="../css/footer/footer.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/subresume/subresume.css">
+    <title>上传简历</title>
+    <script src="../JQuery/jquery-3.2.1.min.js"></script>
+    <script src="../js/myAjax.js"></script>
+    <!-- <script src="../js/scrollToTop.js"></script> -->
+    <script src="../js/nav/nav.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="js/subresume/subresume.js"></script>
+</head>
+<body>
+    <nav class = "indexNav">
+            <ul class = "nav-container">
+                <li><img src="../images/34.jpg" alt=""></li>
+                <li>
+                    <input type="text" name="" id="" placeholder="输入简历标题或简历id">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </li>
+                <li>
+                    <!--图片为用户头像，默认则显示公共头像，如果游客就不显示，shouldShow = "no",显示为yes-->
+                    <img src="../images/yomeng1.jpeg" alt="头像" class="img-circle" shouldShow = "yes">
+                    <!--用户昵称，点击之后跳转到个人空间，游客则显示“登陆平台”,点击则跳转到首页-->
+                    <a class = "nickname" href = "gongping.html">肉烂在锅里</a>
+                    <!--三角形个人菜单按钮，如果是已登录则shouldShow = "yes",不显示为no-->
+                    <span class = "caret"  id = "caret" shouldShow = "yes"></span>
+                    <!-- 点击倒三角展开个人菜单 -->
+                    <div class = "menu" shouldShow = "yes">
+                        <div class = "avatar">
+                            <img src="../images/yomeng1.jpeg" alt="用户头像">
+                        </div>
+                        <div class = "nickname">
+                            <span class = "nickname">肉烂在锅里</span>
+                        </div>
+                        <div class = "p-keywords">
+                            <ul class = "p-keywords">
+                                <li>前端啊啊</li>
+                                <li>爱臭美啊</li>
+                                <li>皮痒求锤</li>
+                                <li>还会设计</li>
+                                <li>萝莉控啊</li>
+                            </ul>
+                        </div>
+                        <div class = "btns">
+                                <a class="btn btn-default" href="#" role="button">进入空间</a>
+                                <a class="btn btn-default" href="#" role="button">上传简历</a>
+                                <br />
+                                <a class="btn btn-default" href="#" role="button">修改资料</a>
+                                <a class="btn btn-default" href="#" role="button">退出登录</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+    </nav> 
+    <!---------------------------以上导航栏--------------------------------------->
+    <!-- <div class="btn-group-vertical vertical-nav" role="group" aria-label="...">
+            <a class="btn btn-default" href="#" role="button">修改资料</a>
+            <a class="btn btn-default" href="#" role="button">基础资料</a>
+            <a class="btn btn-default" href="#" role="button">账号信息</a>
+            <a class="btn btn-default" href="#" role="button">修改头像</a>
+    </div> -->
+
+
+    <div class = "main-container">
+        <div class = "long-background">
+            <div class = "avatars">
+                <img class = "avatar" src="../images/yomeng1.jpeg" alt="">
+                <div class = "nickname">肉烂在锅里</div>
+                <ul class = "p-keywords">
+                    <li>前端啊啊</li>
+                    <li>爱臭美啊</li>
+                    <li>皮痒求锤</li>
+                    <li>还会设计</li>
+                    <li>萝莉控啊</li>
+                </ul>
+            </div>
+        </div>
+        <div class="resume-nav">
+                <ul class="resume-nav">
+                    <li>简历详情</li>
+                    <li>求职意向：<input type="text" name = "title" id = "title"></li>
+                    <li>上传时间：<span id = "stime"></span></li> <!--时间格式： 2019/03/03-->
+                    <li>截止时间：<span id = "ctime"></span></li>
+                    <li>类型：<span id = "jtype" style = "color:red;">待设置</span></li>
+                    <li>简历id: <span id = "jid">╮(╯▽╰)╭</span></li>
+                    <li><span class="glyphicon glyphicon glyphicon-arrow-left" aria-hidden="true"></span></li>
+                </ul>
+        </div>
+        
+        <div class="resume-content">
+
+            <!-- 个人/组织基本信息 -->
+            <div class = "inner-contents basic-info" id = "a">
+                <div class="panel panel-default clearbt" >
+                    
+                    <div class="panel-body" type = "personal" shouldShow = "yes">
+                        <h3>个人基本信息<sup>（姓名、性别、入学年份、联系方式的数据来自设置个人信息，后台直接从数据库中调用）</sup></h3>
+                        <form action="" class = "basic-info" name = "basicInfo">
+                            <div class = "tr">
+                                <span class = "th">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+                                <span class = "td">BAKA⑨</span>                     
+                            </div>
+                            <div class = "tr">
+                                <span class = "th">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span>
+                                <span class = "td">男</span>                     
+                            </div>
+                            <div class = "tr">
+                                <span class = "th">入学年份：</span>
+                                <span class = "td">2016</span>                               
+                            </div>
+                            <div class = "tr">
+                                <span class = "th">联系方式：</span>
+                                <span class = "td">18843163425</span>
+                            </div>
+                            <div class = "tr">
+                                <span class = "th">类似工作经验：</span>
+                                <div class="radio" style = "display:inline-block">
+                                    <label>
+                                      <input type="radio" name="exp" id="optionsRadios1" value="yes" checked />
+                                        是
+                                    </label>
+                                </div>
+                                <div class="radio" style = "display:inline-block">
+                                    <label>
+                                      <input type="radio" name="exp" id="optionsRadios1" value="no"  />
+                                        否
+                                    </label>
+                                </div>
+                            </div>
+                            <div class = "tr picture">
+                                <img src="../images/默认头像.jpeg" alt="" class = "overlook"/>
+                                <a class="btn btn-warning file" href="javascript:;" role="button">
+                                    <span>选择照片</span>
+                                    <input class="btn btn-warning" type="file" name = "picture" />                                
+                                </a>
+                            </div>
+                            
+                            <div class = "tr subtn-container">
+                                <input class="btn btn-warning subtn" type="submit" value="保存并提交" />
+                                <div class = "submit-state-tip">保存失败！</div>
+                            </div>
+                            <!-- <div ></div> -->
+                        </form>
+                    </div> <!--个人--> 
+
+                    <div class="panel-body" type = "organization" shouldShow = "no">
+                            <h3>组织基本信息<sup>（姓名、性别、入学年份、联系方式的数据来自设置个人信息，后台直接从数据库中调用）</sup></h3>
+                            <form action="" class = "basic-info" name = "basicInfo">
+                                <div class = "tr">
+                                    <span class = "th">组织名称：</span>
+                                    <span class = "td">软件研发中心</span>                     
+                                </div>
+                                <div class = "tr">
+                                    <span class = "th">社团性质：</span>
+                                    <span class = "td">计算机/互联网</span>                     
+                                </div>
+                                <div class = "tr">
+                                    <span class = "th">成立时间：</span>
+                                    <span class = "td">2016/03/03</span>                               
+                                </div>
+                                <div class = "tr">
+                                    <span class = "th">联系方式：</span>
+                                    <span class = "td">18843163425</span>
+                                </div>
+                                <div class = "tr">
+                                    <span class = "th">实践项目经验：</span>
+                                    <div class="radio" style = "display:inline-block">
+                                        <label>
+                                          <input type="radio" name="exp" value="yes" checked />
+                                            是
+                                        </label>
+                                    </div>
+                                    <div class="radio" style = "display:inline-block">
+                                        <label>
+                                          <input type="radio" name="exp" value="no"  />
+                                            否
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class = "tr picture">
+                                    <img src="../images/默认头像.jpeg" alt="" class = "overlook"/>
+                                    <a class="btn btn-warning file" href="javascript:;" role="button">
+                                        <span>选择照片</span>
+                                        <input class="btn btn-warning" type="file" name = "picture" />                                
+                                    </a>
+                                </div>
+                                
+                                <div class = "tr subtn-container">
+                                    <input class="btn btn-warning subtn" type="submit" value="保存并提交" />
+                                    <div class = "submit-state-tip">保存失败！</div>
+                                </div>
+                                <!-- <div ></div> -->
+                            </form>
+                    </div> <!--组织-->
+
+                </div>
+
+            </div> <!-- 个人基本信息 -->
+
+
+            <!-- 工作经验 -->
+            <div class = "inner-contents xm-experience" id = "b">
+                <div class="panel panel-default clearbt" >
+
+                    <div class="panel-body" type = "personal" shouldShow = "yes">
+                        <h3>工作经验</h3>
+                        <form action="" class = "basic-info" name = "gz">
+                            <div class = "tr">
+                                <span class = "th">组织名称：</span>
+                                <span class = "td"><input type="text" name = "zzname" class="form-control input" /></span>                     
+                            </div>
+                            <div class = "tr">
+                                <span class = "th">职位名称：</span>
+                                <span class = "td"><input type="text" name = "zwname" class="form-control input" /></span>                     
+                            </div>
+                            <div class = "tr">
+                                <span class = "th">在职时间：</span>
+                                <span class = "td">
+                                        <select name = "gztime" class="form-control select">
+                                                <option value = "7">7天内</option>
+                                                <option value = "20">20天内</option>
+                                                <option value = "30">30天内</option>
+                                                <option value = "60">60天内</option>
+                                                <option value = "180">180天内</option>
+                                                <option value = "365">一年及以上</option>
+                                        </select>
+                                </span>
+                            </div>
+                            <div class = "tr">
+                                    <span class = "th">工作描述：</span>
+                                    <span class = "td">
+                                        <textarea class="form-control text" name = "gzdescribe" rows="3"></textarea>
+                                    </span>                     
+                            </div>
+                            <!-- <div id = "submit-state-tip">保存失败！</div> -->
+                            <div class = "tr subtn-container">
+                                <input class="btn btn-warning subtn" type="submit" value="保存并提交" />
+                                <div class = "submit-state-tip">保存失败！</div>
+                            </div>
+                        </form>
+                    </div> <!--个人-->
+
+                    <div class="panel-body" type = "organization" shouldShow = "no">
+                            <h3>实践项目经验</h3>
+                            <form action="" class = "basic-info" name = "gz">
+                                <div class = "tr">
+                                    <span class = "th">实践项目名称：</span>
+                                    <span class = "td"><input type="text" name = "sjname" class="form-control input" /></span>                     
+                                </div>
+                                <!-- <div class = "tr">
+                                    <span class = "th">职位名称：</span>
+                                    <span class = "td"><input type="text" name = "zwname" class="form-control input" /></span>                     
+                                </div> -->
+                                <div class = "tr">
+                                    <span class = "th">实践项目持续时间：</span>
+                                    <span class = "td">
+                                            <select name = "cxtime" class="form-control select">
+                                                    <option value = "7">7天内</option>
+                                                    <option value = "20">20天内</option>
+                                                    <option value = "30">30天内</option>
+                                                    <option value = "60">60天内</option>
+                                                    <option value = "180">180天内</option>
+                                                    <option value = "365">一年及以上</option>
+                                            </select>
+                                    </span>
+                                </div>
+                                <div class = "tr">
+                                        <span class = "th">实践项目描述：</span>
+                                        <span class = "td">
+                                            <textarea class="form-control text" name = "sjdescribe" rows="3"></textarea>
+                                        </span>                     
+                                </div>
+                                <!-- <div id = "submit-state-tip">保存失败！</div> -->
+                                <div class = "tr subtn-container">
+                                    <input class="btn btn-warning subtn" type="submit" value="保存并提交" />
+                                    <div class = "submit-state-tip">保存失败！</div>
+                                </div>
+                            </form>
+                        </div> <!--组织--> 
+
+                </div>
+            </div><!-- 工作经验 -->
+            
+            <!-- 项目经验 -->
+            <!-- 个人角度因为考虑到他可能没有工作经验但是却有项目经验，所以另为个人简历设项目经验表单，组织简历 shouldShow = "no"-->
+            <div class = "inner-contents xm-experience" id = "c" shouldShow = "yes">
+                    <div class="panel panel-default clearbt">
+                        <div class="panel-body">
+                            <h3>项目经验</h3>
+                            <form action="" class = "basic-info" name = "xmexperience">
+                                <div class = "tr">
+                                    <span class = "th">项目名称：</span>
+                                    <span class = "td"><input type="text" name = "xmname" class="form-control input" id="inputEmail3"></span>                     
+                                </div>
+                                <div class = "tr">
+                                    <span class = "th">项目描述：</span>
+                                    <span class = "td">
+                                        <textarea class="form-control text" name = "xmdescribe" rows="3"></textarea>
+                                    </span>                     
+                                </div>
+                                <div class = "tr">
+                                    <span class = "th">个人职责：</span>
+                                    <span class = "td">
+                                        <textarea class="form-control text" name = "xmduty" rows="3"></textarea>
+                                    </span>                     
+                                </div>
+                                <div class = "tr subtn-container">
+                                    <input class="btn btn-warning subtn" type="submit" value="保存并提交" />
+                                    <div class = "submit-state-tip">保存失败！</div>
+                                </div>
+                            </form>
+                        </div>
+                      </div>
+            </div><!-- 项目经验 -->
+
+            <!-- 证书情况 -->
+            <!-- 证书情况不存在个人与组织的区分 -->
+            <div class = "inner-contents xm-experience" id = "d">
+                <div class="panel panel-default clearbt">
+                    <div class="panel-body">
+                        <h3>证书情况</h3>
+                        <form action="" class = "basic-info" name = "zs">
+                            <div class = "tr">
+                                <span class = "th">证书文件：</span>
+                                <span class = "td"><input type="text" name = "zsname" class="form-control input"></span>                     
+                            </div>
+                            <div class = "tr">
+                                <span class = "th">获取时间：</span>
+                                <!-- 之后利用日历选择，日历方法fcalendar制作中...... -->
+                                <span class = "td"><input type="number" name = "hqtime" class="form-control input" placeholder = "eg:20190214"></span>                                    
+                            </div>
+                            <div class = "tr subtn-container">
+                                    <input class="btn btn-warning subtn" type="submit" value="保存并提交" />
+                                    <div class = "submit-state-tip">保存失败！</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> <!-- 证书情况 -->
+
+            <!-- 自我评价/组织介绍 -->
+            <div class = "inner-contents xm-experience" id = "e">
+                    <div class="panel panel-default clearbt" >
+
+                        <div class="panel-body" shouldShow = "yes">
+                            <h3>自我评价</h3>
+                            <form action="" class = "basic-info" name = "zwpj">
+                                <div class = "tr">
+                                    <span class = "th">自我评价：</span>
+                                    <span class = "td">
+                                        <textarea class="form-control text" name = "evaluate" rows="3"></textarea>
+                                    </span>                     
+                                </div>
+                                <div class = "tr subtn-container">
+                                    <input class="btn btn-warning subtn" type="submit" value="保存并提交" />
+                                    <div class = "submit-state-tip">保存失败！</div>
+                                </div>
+                            </form>
+                        </div> <!--个人-->
+
+                        <div class="panel-body" shouldShow = "no">
+                                <h3>组织介绍：</h3>
+                                <form action="" class = "basic-info" name = "zzjs">
+                                    <div class = "tr">
+                                        <span class = "th">组织介绍：</span>
+                                        <span class = "td">
+                                            <textarea class="form-control text" name = "zzdescribe" rows="3"></textarea>
+                                        </span>                     
+                                    </div>
+                                    <div class = "tr subtn-container">
+                                        <input class="btn btn-warning subtn" type="submit" value="保存并提交" />
+                                        <div class = "submit-state-tip">保存失败！</div>
+                                    </div>
+                                </form>
+                        </div> <!--组织-->
+
+                    </div>
+            </div>
+
+            <!-- 上传附件 -->
+            <!-- 上传附件不存在个人与组织角度的区分 -->
+            <div class = "inner-contents xm-experience" id = "e">
+                    <div class="panel panel-default clearbt" >
+                        <div class="panel-body">
+                            <h3>上传附件</h3>
+                            <form action="" class = "basic-info" name = "scfj">
+                                    <div class = "tr">
+                                            <span class = "th">证书名称：</span>
+                                            <span class = "td"><input type="file" name = "fujian" class="form-control input"></span>                     
+                                    </div>
+                                    <div class = "tr">
+                                        <span class = "th">附件描述：</span>
+                                        <span class = "td">
+                                            <textarea class="form-control text" name = "fjdescribe" rows="3"></textarea>
+                                        </span>                     
+                                    </div>
+                                    <div class = "tr subtn-container">
+                                        <input class="btn btn-warning subtn" type="submit" value="保存并提交" />
+                                        <div class = "submit-state-tip"></div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+            </div><!-- 上传附件 -->
+
+            <!-- 简历设置 -->
+            <!-- 简历设置存在角度区分，但是也只是选择类型按钮下的内容不同而已。应该设置shouldShow -->
+        <div class = "inner-contents xm-experience" id = "f">
+            <div class="panel panel-default clearbt" >
+                <div class="panel-body" shouldShow = "yes">
+                    <h3>简历设置</h3>
+                    <form action="" class = "basic-info" name = "setting">
+                            <div class = "tr">
+                                <span class = "th">简历类型：</span>
+                                <span class = "td">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-info dropdown-toggle type-btn"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                选择类型 <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu level-1">
+                                                <li>
+                                                    <a style = "cursor: pointer;">大类型1</a>
+                                                    <ul class = "level-2">
+                                                            <li><a style = "cursor: pointer;">小类型1</a></li>
+                                                            <li><a style = "cursor: pointer;">小类型2</a></li>
+                                                            <!-- <li role="separator" class="divider"></li> -->
+                                                            <li><a style = "cursor: pointer;">小类型3</a></li>
+                                                            <li><a style = "cursor: pointer;">小类型4</a></li>
+                                                            <li><a style = "cursor: pointer;">小类型5</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a style = "cursor: pointer;">大类型2</a>
+                                                    <ul class = "level-2">
+                                                            <li><a style = "cursor: pointer;">小类型1</a></li>
+                                                            <li><a style = "cursor: pointer;">小类型2</a></li>
+                                                            <!-- <li role="separator" class="divider"></li> -->
+                                                            <li><a style = "cursor: pointer;">小类型3</a></li>
+                                                            <li><a style = "cursor: pointer;">小类型4</a></li>
+                                                            <li><a style = "cursor: pointer;">小类型5</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a style = "cursor: pointer;">大类型3</a>
+                                                    <ul class = "level-2">
+                                                            <li><a style = "cursor: pointer;">小类型1</a></li>
+                                                            <li><a style = "cursor: pointer;">小类型2</a></li>
+                                                            <!-- <li role="separator" class="divider"></li> -->
+                                                            <li><a style = "cursor: pointer;">小类型3</a></li>
+                                                            <li><a style = "cursor: pointer;">小类型4</a></li>
+                                                            <li><a style = "cursor: pointer;">小类型5</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a style = "cursor: pointer;">其他</a></li>
+                                            </ul>
+                                        </div>
+                                </span>       
+                            </div>
+                            <div class = "tr">
+                                <span class = "th">简历关键词：</span>
+                                <span class = "td"><input type="text" maxlength = "4" name = "jkey1" class="form-control input" style = "width:100px; display:inline-block;"></span>                     
+                                <span class = "td"><input type="text" maxlength = "4" name = "jkey2" class="form-control input" style = "width:100px; display:inline-block;"></span>                     
+                                <span class = "td"><input type="text" maxlength = "4" name = "jkey3" class="form-control input" style = "width:100px; display:inline-block;"></span>                     
+                                <span class = "td"><input type="text" maxlength = "4" name = "jkey4" class="form-control input" style = "width:100px; display:inline-block;"></span>                     
+                                <span class = "td"><input type="text" maxlength = "4" name = "jkey5" class="form-control input" style = "width:100px; display:inline-block;"></span>
+                                </span>                             
+                            </div>
+                            <div class = "tr">
+                                <span class = "th">就职意向：</span>
+                                <!--简历标题在这里修改后会同步修改最上面的标题，因此不用传此处的title值,不设置name属性就不会传。-->
+                                <span class = "td"><input type="text" id = "title2" class="form-control input"></span>
+                                <div style = "position:absolute; top:176px; right:160px;">
+                                        <span class = "th">撤销时间</span>
+                                        <span class = "td" >
+                                            <select id = "ctime2" class="form-control select">
+                                                <option value = "3">3天后</option>
+                                                <option value = "7">7天后</option>
+                                                <option value = "14">14天后</option>
+                                                <option value = "30">30天后</option>
+                                            </select>
+                                        </span>  
+                                </div>       
+                                            
+                            </div>
+                            
+                            <div class = "tr">
+                                <span class = "th">简历简述：</span>
+                                <span class = "td">
+                                    <textarea class="form-control text" name = "jlresume" placeholder="这里的内容将会在公屏缩略图上显示。"></textarea>
+                                </span>                     
+                            </div>
+                            <div class = "tr ">
+                                <div class = "subtn-container">
+                                    <input class="btn btn-warning subtn" type="submit" value="保存并提交" />
+                                    <div class = "submit-state-tip"></div>
+                                    <input id = "submit-to-homepage" data-name = "submit-to-homepage" class="btn btn-info" type="submit" value="上传至公屏" />                                
+                                </div>                        
+                            </div>
+                    </form>
+                </div> <!--个人-->
+
+                <div class="panel-body" shouldShow = "no">
+                        <h3>简历设置</h3>
+                        <form action="" class = "basic-info" name = "setting">
+                                <div class = "tr">
+                                    <span class = "th">简历类型：</span>
+                                    <span class = "td">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-info dropdown-toggle type-btn"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    选择类型 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu level-1">
+                                                    <li>
+                                                        <a style = "cursor: pointer;">大类型a</a>
+                                                        <ul class = "level-2">
+                                                                <li><a style = "cursor: pointer;">小类型a</a></li>
+                                                                <li><a style = "cursor: pointer;">小类型b</a></li>
+                                                                <!-- <li role="separator" class="divider"></li> -->
+                                                                <li><a style = "cursor: pointer;">小类型c</a></li>
+                                                                <li><a style = "cursor: pointer;">小类型d</a></li>
+                                                                <li><a style = "cursor: pointer;">小类型e</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a style = "cursor: pointer;">大类型b</a>
+                                                        <ul class = "level-2">
+                                                                <li><a style = "cursor: pointer;">小类型f</a></li>
+                                                                <li><a style = "cursor: pointer;">小类型g</a></li>
+                                                                <!-- <li role="separator" class="divider"></li> -->
+                                                                <li><a style = "cursor: pointer;">小类型h</a></li>
+                                                                <li><a style = "cursor: pointer;">小类型i</a></li>
+                                                                <li><a style = "cursor: pointer;">小类型j</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a style = "cursor: pointer;">大类型c</a>
+                                                        <ul class = "level-2">
+                                                                <li><a style = "cursor: pointer;">小类型k</a></li>
+                                                                <li><a style = "cursor: pointer;">小类型l</a></li>
+                                                                <!-- <li role="separator" class="divider"></li> -->
+                                                                <li><a style = "cursor: pointer;">小类型m</a></li>
+                                                                <li><a style = "cursor: pointer;">小类型n</a></li>
+                                                                <li><a style = "cursor: pointer;">小类型u</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li role="separator" class="divider"></li>
+                                                    <li><a style = "cursor: pointer;">其他</a></li>
+                                                </ul>
+                                            </div>
+                                    </span>       
+                                </div>
+                                <div class = "tr">
+                                    <span class = "th">简历关键词：</span>
+                                    <span class = "td"><input type="text" maxlength = "4" name = "jkey1" class="form-control input" style = "width:100px; display:inline-block;"></span>                     
+                                    <span class = "td"><input type="text" maxlength = "4" name = "jkey2" class="form-control input" style = "width:100px; display:inline-block;"></span>                     
+                                    <span class = "td"><input type="text" maxlength = "4" name = "jkey3" class="form-control input" style = "width:100px; display:inline-block;"></span>                     
+                                    <span class = "td"><input type="text" maxlength = "4" name = "jkey4" class="form-control input" style = "width:100px; display:inline-block;"></span>                     
+                                    <span class = "td"><input type="text" maxlength = "4" name = "jkey5" class="form-control input" style = "width:100px; display:inline-block;"></span>
+                                    </span>                             
+                                </div>
+                                <div class = "tr">
+                                    <span class = "th">招职意向：</span>
+                                    <!--简历标题在这里修改后会同步修改最上面的标题，传的是上面的标题字段，因此不用传此处的title值,不设置name属性就不会传。-->
+                                    <span class = "td"><input type="text" id = "title3" class="form-control input"></span>
+                                    <div style = "position:absolute; top:176px; right:160px;">
+                                            <span class = "th">撤销时间</span>
+                                            <span class = "td" >
+                                                <select id = "ctime3" class="form-control select">
+                                                    <option value = "3">3天后</option>
+                                                    <option value = "7">7天后</option>
+                                                    <option value = "14">14天后</option>
+                                                    <option value = "30">30天后</option>
+                                                </select>
+                                            </span>  
+                                    </div>       
+                                                
+                                </div>
+                                
+                                <div class = "tr">
+                                    <span class = "th">简历简述：</span>
+                                    <span class = "td">
+                                        <textarea class="form-control text" name = "jlresume" placeholder="这里的内容将会在公屏缩略图上显示。"></textarea>
+                                    </span>                     
+                                </div>
+                                <div class = "tr">
+                                        <span class = "th">职位要求：</span>
+                                        <span class = "td">
+                                            <textarea class="form-control text" name = "zwrequire" rows="3"></textarea>
+                                        </span>                     
+                                </div>
+                                <div class = "tr ">
+                                    <div class = "subtn-container">
+                                        <input class="btn btn-warning subtn" type="submit" value="保存并提交" />
+                                        <div class = "submit-state-tip"></div>
+                                        <input id = "submit-to-homepage" data-name = "submit-to-homepage" class="btn btn-info" type="submit" value="上传至公屏" />                                
+                                    </div>                        
+                                </div>
+                        </form>
+                    </div><!--组织-->
+            </div>
+        </div> <!--简历设置-->
+        </div>
+
+        
+
+    </div>
+        
+       <!-- <div style = "clear:both"></div> -->
+    </div> <!--main-container-->
+    
+    <footer id = "footer">
+            校园人力资源招用平台 @东北电力大学理学院软件研发中心
+    </footer>
+
+</body>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</html>

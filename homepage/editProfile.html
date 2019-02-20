@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/cleardefault.css">
+    <link rel="stylesheet" href="../css/common.css"">
+    <link rel="stylesheet" href="../css/nav/nav.css">
+    <link rel="stylesheet" href="../css/footer/footer.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/editProfile/editProfile.css">
+    <title>校园人力资源招用平台个人主页</title>
+    <script src="../JQuery/jquery-3.2.1.min.js"></script>
+    <script src="../js/myAjax.js"></script>
+    <!-- <script src="../js/scrollToTop.js"></script> -->
+    <script src="../js/nav/nav.js"></script>
+    <script src="js/editProfile/editProfile.js"></script>
+</head>
+<body>
+    <nav class = "indexNav">
+            <ul class = "nav-container">
+                <li><img src="../images/34.jpg" alt=""></li>
+                <li>
+                    <input type="text" name="" id="" placeholder="输入简历标题或简历id">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </li>
+                <li>
+                    <!--图片为用户头像，默认则显示公共头像，如果游客就不显示，shouldShow = "no",显示为yes-->
+                    <img src="../images/yomeng1.jpeg" alt="头像" class="img-circle" shouldShow = "yes">
+                    <!--用户昵称，点击之后跳转到个人空间，游客则显示“登陆平台”,点击则跳转到首页-->
+                    <a class = "nickname" href = "gongping.html">肉烂在锅里</a>
+                    <!--三角形个人菜单按钮，如果是已登录则shouldShow = "yes",不显示为no-->
+                    <span class = "caret"  id = "caret" shouldShow = "yes"></span>
+                    <!-- 点击倒三角展开个人菜单 -->
+                    <div class = "menu" shouldShow = "yes">
+                        <div class = "avatar">
+                            <img src="../images/yomeng1.jpeg" alt="用户头像">
+                        </div>
+                        <div class = "nickname">
+                            <span class = "nickname">肉烂在锅里</span>
+                        </div>
+                        <div class = "p-keywords">
+                            <ul class = "p-keywords">
+                                <li>前端啊啊</li>
+                                <li>爱臭美啊</li>
+                                <li>皮痒求锤</li>
+                                <li>还会设计</li>
+                                <li>萝莉控啊</li>
+                            </ul>
+                        </div>
+                        <div class = "btns">
+                                <a class="btn btn-default" href="#" role="button">进入空间</a>
+                                <a class="btn btn-default" href="#" role="button">上传简历</a>
+                                <br />
+                                <a class="btn btn-default" href="#" role="button">修改资料</a>
+                                <a class="btn btn-default" href="#" role="button">退出登录</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+    </nav> 
+    <!---------------------------以上导航栏--------------------------------------->
+    <!-- <div class="btn-group-vertical vertical-nav" role="group" aria-label="...">
+            <a class="btn btn-default" href="#" role="button">修改资料</a>
+            <a class="btn btn-default" href="#" role="button">平台资料</a>
+            <a class="btn btn-default" href="#" role="button">基本信息</a>
+            <a class="btn btn-default" href="#" role="button">账号信息</a>
+            <a class="btn btn-default" href="#" role="button">修改头像</a>
+    </div> -->
+
+
+    <div class = "main-container">
+        <div class = "long-background">
+            <div class = "avatars">
+                <img class = "avatar" src="../images/yomeng1.jpeg" alt="">
+                <div class = "nickname">肉烂在锅里</div>
+                <ul class = "p-keywords">
+                    <li>前端啊啊</li>
+                    <li>爱臭美啊</li>
+                    <li>皮痒求锤</li>
+                    <li>还会设计</li>
+                    <li>萝莉控啊</li>
+                </ul>
+            </div>
+        </div>
+        <div class="homepage-nav">
+            <ul class="homepage-nav">
+                <li><a href="#">我的简历</a></li>
+                <li><a href="#">消息中心</a></li>
+                <li><a href="#">简历草稿</a></li>
+                <li><input type="text" placeholder = "输入后回车搜索（id、标题关键字）"/></li>
+                <li gaoliang = "yes"><a href="#">修改资料</a></li>
+                <!-- 此处上传简历的传参入口取消 -->
+                <li><button class="btn btn-default" type="submit">简历上传</button></li>
+            </ul>
+        </div>
+        <div class="content-panel">
+            <div class = "overview-container">
+                <div class="left"></div>
+                <div class="right">
+                    <!-- 修改头像 -->
+                    <div class="panel panel-warning" shouldShow = "yes">
+                            <div class="panel-heading"><h3>修改头像</h3></div>
+                            <div class="panel-body">
+                                <form action="php/basicInfo.php" method="post" name = "change-avatar" enctype = "multipart/form-data">
+                                    <div class="change-avatar-box">
+                                            <div class = "avatar-input">
+                                                <!-- 上传的图片已经确定是image，为了减少工作量，后端暂且可以不做文件格式检验 -->
+                                                <input type="file" id = "select-avatar" name="newavatar" />
+                                            </div>
+                                            <div class = "cut-off"></div>
+                                            <div class = "overview-avatar">
+                                                <!-- 这里的头像图片的初始状态应该是当前用户使用的图片 -->
+                                                <img src="../images/yomeng1.jpeg" class = "current-avatar" alt="">
+                                                <div id = "avatar-tip">
+                                                    <span>当前头像</span>
+                                                </div>
+                                            </div>
+                                            <div class="updata-avatar">
+                                                <!-- 点击更新头像后会同步将图片上传到后端，之后由后端进行保存图片，保存成功与否都要在让其在特定时间内跳转回来 -->
+                                                <input class="btn btn-warning" id = "updata-avatar" type="submit"  value="更新头像">                                   
+                                            </div>
+                                    </div>
+                                    
+                                </form>
+                                
+                            </div>
+                        </div><!--修改头像-->
+
+                    <!-- 个人平台资料，组织账号不予显示 -->
+                    <div class="panel panel-warning" shouldShow = "yes">
+                            <div class="panel-heading"><h3>平台资料</h3></div>
+                            <div class="panel-body">
+                                <form action="php/basicInfo.php" method="get">
+                                    <div class = "tr nickname">
+                                        <span class = "th">昵称：</span>
+                                        <input type="text" name="nickname" />
+                                    </div>
+                                    <div class="tr pkeywords">
+                                        <span class = "th">个人标签：</span>
+                                        <input type="text" name="pkeywords1" maxlength="4" placeholder = "每个最多四个字"/>
+                                        <input type="text" name="pkeywords2" maxlength="4"/>
+                                        <input type="text" name="pkeywords3" maxlength="4"/>
+                                        <input type="text" name="pkeywords4" maxlength="4"/>
+                                        <input type="text" name="pkeywords5" maxlength="4"/>
+                                    </div>
+                                    <div class="tr p-explain" >
+                                        <span class="th">个人签名：</span>
+                                        <textarea name="pexplain" cols="70" rows="10"></textarea>
+                                    </div>
+                                    <div class="tr submit">
+                                        <input class="btn btn-warning" type="submit" value="保存并提交">
+                                    </div>
+                                </form>
+                            </div>
+                    </div>
+
+                    <!-- 组织平台资料，个人账号不予显示 -->
+                    <div class="panel panel-warning" shouldShow = "no">
+                        <div class="panel-heading"><h3>平台资料</h3></div>
+                        <div class="panel-body">
+                            <form action="php/basicInfo.php" method="get">
+                                <div class = "tr nickname">
+                                    <span class = "th">昵称：</span><input type="text" name="nickname" />
+                                </div>
+                                <div class="tr pkeywords">
+                                    <span class = "th">组织标签：</span>
+                                    <input type="text" name="pkeywords1" maxlength="4" placeholder = "每个最多四个字"/>
+                                    <input type="text" name="pkeywords2" maxlength="4"/>
+                                    <input type="text" name="pkeywords3" maxlength="4"/>
+                                    <input type="text" name="pkeywords4" maxlength="4"/>
+                                    <input type="text" name="pkeywords5" maxlength="4"/>
+                                </div>
+                                <div class="tr p-explain" >
+                                    <span class="th">组织宣言：</span>
+                                    <textarea name="pexplain" cols="70" rows="10"></textarea>
+                                </div>
+                                <div class="tr submit">
+                                    <input class="btn btn-warning" type="submit" value="保存并提交">                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 个人基本信息，组织账号不予显示 -->
+                    <div class="panel panel-info" shouldShow = "yes">
+                            <div class="panel-heading"><h3>个人信息</h3></div>
+                            <div class="panel-body">
+                                <form action="php/basicInfo.php" method="get">
+                                    <div class = "tr name">
+                                        <span class = "th">真实姓名：</span>
+                                        <input type="text" name="name" />
+                                    </div>
+                                    <div class="tr sex">
+                                        <span class = "th">性别：</span>
+                                        <select name="sex">
+                                            <option value="male">男</option>
+                                            <option value="female" selected>女</option>
+                                        </select>
+                                    </div>
+                                    <div class="tr xueyuan">
+                                        <span class = "th">所在学院：</span>
+                                        <input type="text" name="xueyuan" />
+                                    </div>
+                                    <div class="tr xibie">
+                                        <span class = "th">就读系别：</span>
+                                        <input type="xibie" />
+                                    </div>
+                                    <div class="tr join-time">
+                                        <span class="th">入学时间：</span>
+                                        <span>年份</span>
+                                        <select name="year">
+                                            <option value="2015">2015</option>
+                                            <option value="2016" selected>2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                        </select>
+                                        <span>月份</span>
+                                        <select name="month">
+                                                <option value="1" selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="tr phonenum">
+                                        <span class = "th">联系方式：</span>
+                                        <input type="number" name="phonenum" />
+                                    </div>
+                                    <div class="tr speciality">
+                                        <span class = "th">爱好特长：</span>
+                                        <textarea name="speciality" cols="70" rows="10"></textarea>
+                                    </div>
+                                    <div class="tr count">
+                                            <span class = "th">现已加入组织数：</span>
+                                            <input type="number" name="count" />
+                                    </div>
+                                    <div class="tr submit">
+                                        <input class="btn btn-info" type="submit" value="保存并提交">                                            
+                                    </div>
+                                </form>
+                            </div>
+                    </div>
+
+                    <!-- 组织基本信息，个人账号不予显示 -->
+                    <div class="panel panel-info" shouldShow = "no">
+                        <div class="panel-heading"><h3>组织信息</h3></div>
+                        <div class="panel-body">
+                                <form action="php/basicInfo.php" method="get">
+                                        <div class = "tr name">
+                                            <span class = "th">组织名称：</span>
+                                            <input type="text" name="name" />
+                                        </div>
+                                        <div class="tr sex">
+                                            <span class = "th">社团性质：</span>
+                                            <select name="sex">
+                                                <option value="gongyi">公益类</option>
+                                                <option value="xingqu" selected>兴趣类</option>
+                                                <option value="xuexi">学习类</option>
+                                                <option value="peixun">培训类</option>          
+                                            </select>
+                                        </div>
+                                        <div class="tr xueyuan">
+                                            <span class = "th">所在学院：</span>
+                                            <input type="text" name="xueyuan" />
+                                        </div>
+                                        <!-- <div class="xibie">
+                                            <span class = "th">就读系别：</span>
+                                            <input type="xibie" />
+                                        </div> -->
+                                        <div class="tr join-time">
+                                            <span class="th">成立时间：</span>
+                                            <span>年份</span>
+                                            <select name="year">
+                                                <option value="2015">2015</option>
+                                                <option value="2016" selected>2016</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2019">2019</option>
+                                            </select>
+                                            <span>月份</span>
+                                            <select name="month">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                            </select>
+                                        </div>
+                                        <div class="tr phonenum">
+                                            <span class = "th">联系方式：</span>
+                                            <input type="number" name="phonenum" />
+                                        </div>
+                                        <div class="tr speciality">
+                                            <span class = "th">社团特长：</span>
+                                            <textarea name="speciality" id="" cols="30" rows="7"></textarea>
+                                        </div>
+                                        <div class="tr count">
+                                                <span class = "th">又有活跃人数：</span>
+                                                <input type="number" name="count" />
+                                        </div>
+                                        <div class="tr submit">
+                                                <input class="btn btn-info" type="submit" value="保存并提交">
+                                        </div>
+                                </form>
+                        </div>
+                    </div>
+
+                    <!-- 账号信息 -->
+                    <div class="panel panel-warning" shouldShow = "yes">
+                        <div class="panel-heading"><h3>账号信息</h3></div>
+                        <div class="panel-body">
+                            <form action="php/changePassword.php" name = "changepassword" method="post">
+                                <div class = "tr oldpassword">
+                                    <span class = "th">当前密码：</span>
+                                    <span class = "td"><input type="password" name="oldpassword" id = "oldpassword" style = "width:300px;"></span>
+                                    <span></span>
+                                    <!-- <span class = "td">你输入的密码有误！</span>
+                                    <span>对号</span> -->
+                                </div>
+                                <div class="tr">
+                                    <span class = "th">新密码：</span>
+                                    <span class = "td"><input type="password" name="newpassword" id = "newpassword" style = "width:300px;"></span>
+                                    <span class = "td"></span>                                    
+                                </div>
+                                <div class="tr">
+                                    <span class = "th">确认密码：</span>
+                                    <span class = "td"><input type="password" id = "confirmpassword" style = "width:300px;"></span>
+                                    <span class = "td"></span>                                    
+                                </div>
+                                <div class="tr submit">
+                                    <input class="btn btn-warning" type="submit" id = "changepasswordBtn" value="保存并提交" disabled="disabled">                                   
+                                </div>
+                            </form>
+                        </div>
+                    </div><!--账号信息-->
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </div> <!--main-container-->
+    
+    <footer id = "footer">
+            校园人力资源招用平台 @东北电力大学理学院软件研发中心
+    </footer>
+
+</body>
+</html>

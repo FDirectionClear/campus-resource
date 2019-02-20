@@ -1,0 +1,194 @@
+[shouldShow="no"] {
+  display: none !important;
+}
+
+.trangle {
+  position: absolute;
+  right: -51px;
+  top: -51px;
+  width: 100px;
+  height: 100px;
+  border-left: 20px solid  transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid orange;
+  transform: rotate(45deg);
+}
+.trangle span {
+  position: relative;
+  display: inline-block;
+  bottom: -98%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* border:1px blue solid; */
+  font-size: 0.9em;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  height: 100px;
+  width: 100px;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+.scroll-to-top img {
+  width: 100%;
+  height: 100%;
+}
+
+div.main-panel {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1500px;
+  margin-top: 150px;
+  padding: 15px;
+}
+div.main-panel div.cell {
+  position: relative;
+  display: inline-block;
+  height: 300px;
+  width: 467px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 13px;
+  vertical-align: top;
+  box-shadow: 0px 0px 5px #888888;
+}
+div.main-panel div.cell div {
+  float: left;
+}
+div.main-panel div.cell div.picture {
+  height: 170px;
+  width: 150px;
+  box-shadow: 0 0 5px #888888;
+  cursor: pointer;
+}
+div.main-panel div.cell div.picture img.picture {
+  height: 100%;
+  width: 100%;
+}
+div.main-panel div.cell div.avatar {
+  height: 58px;
+  width: 58px;
+  margin-top: 0px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+div.main-panel div.cell div.avatar img.avatar {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0px 0px 1px #888888;
+}
+div.main-panel div.cell div.title, div.main-panel div.cell div.nickname {
+  height: 30px;
+  width: 150px;
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+div.main-panel div.cell div.nickname {
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: -2px;
+}
+div.main-panel div.cell div.j-key, div.main-panel div.cell div.info, div.main-panel div.cell div.time {
+  height: 30px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+div.main-panel div.cell div.j-key ul, div.main-panel div.cell div.info ul, div.main-panel div.cell div.time ul {
+  list-style: none;
+  padding: 0px;
+}
+div.main-panel div.cell div.j-key ul li, div.main-panel div.cell div.info ul li, div.main-panel div.cell div.time ul li {
+  display: inline-block;
+  margin-right: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 1000;
+}
+div.main-panel div.cell div.j-key ul li:last-child, div.main-panel div.cell div.info ul li:last-child, div.main-panel div.cell div.time ul li:last-child {
+  margin: 0;
+}
+div.main-panel div.cell div.info {
+  margin-top: 0px;
+}
+div.main-panel div.cell div.info ul > li {
+  margin-right: 16px;
+  cursor: pointer;
+  font-size: 1.0em;
+  font-weight: 500 !important;
+  letter-spacing: normal;
+}
+div.main-panel div.cell div.time {
+  margin-top: 0px;
+}
+div.main-panel div.cell div.time ul.time {
+  font-size: 0.8em;
+}
+div.main-panel div.cell div.time ul.time li {
+  cursor: pointer;
+}
+div.main-panel div.cell hr.hr {
+  position: absolute;
+  bottom: 85px;
+  border: 0.5px #AAAAAA solid;
+  width: 437px;
+  height: 0;
+}
+div.main-panel div.cell div.resume {
+  width: 437px;
+  height: 70px;
+  margin-top: 20px;
+  line-height: 1.6em;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+div.main-panel div.cell div.jinfo {
+  width: 437px;
+  height: 20px;
+}
+div.main-panel div.cell div.jinfo ul.jinfo {
+  position: relative;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+}
+div.main-panel div.cell div.jinfo ul.jinfo li {
+  cursor: pointer;
+  position: absolute;
+}
+div.main-panel div.cell div.jinfo ul.jinfo li:first-child {
+  left: 0px;
+}
+div.main-panel div.cell div.jinfo ul.jinfo li:last-child {
+  right: 0px;
+}
+div.main-panel div.cell div.jinfo ul.jinfo li:nth-child(2) {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-to-top{
+  position:fixed;
+  bottom:20px;
+  right:30px;
+  height:50px;
+  width:50px;
+  font-size:1.3em;
+  cursor: pointer;
+  
+}
+
+.scroll-to-top img{
+  width:100%;
+  height:100%;
+}
+
+/*# sourceMappingURL=mainPanel.css.map */
