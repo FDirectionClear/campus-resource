@@ -1,0 +1,60 @@
+div.scrolling {
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+  width: 1070.4px;
+  background: skyblue;
+}
+
+div.login-in {
+  vertical-align: top;
+  display: inline-block;
+  height: 100.5%;
+  width: 453.94px;
+  background: white;
+}
+div.login-in h2 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+div.login-in div.input-group {
+  margin-left: 50px;
+  margin-top: 20px;
+}
+div.login-in div.input-group input {
+  width: 300px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+div.login-in div.identifying-code {
+  display: inline-block;
+  width: 400px;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+div.login-in div.identifying-code img.identifying-img {
+  vertical-align: top;
+  height: 40px;
+  width: 120px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+div.login-in div.identifying-code input {
+  vertical-align: top;
+  display: inline-block;
+  width: 195px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+div.login-in div.btns {
+  margin-top: 30px;
+  text-align: center;
+}
+div.login-in div.btns button.denglu {
+  margin-right: 20px;
+  width: 190px;
+}
+
+/*# sourceMappingURL=scrolling.css.map */

@@ -1,0 +1,54 @@
+.main-container{
+    position: relative;
+    /* border: 2px hotpink solid; */
+    height:600px;
+    width:1300px;
+    margin:50px auto;
+    box-shadow:0 0 5px #888888;
+    border-radius:10px;
+    overflow: hidden;
+}
+h3{
+    margin:30px;
+}
+form[name = "register"] table{
+    position: relative;
+    /* border:1px blue solid; */
+    width:500px;
+    margin:50px auto;
+    overflow:hidden;
+}
+form[name = "register"] table tr {
+    display:block;
+    /* border: red solid 1px; */
+    margin:20px;
+}
+/* 提交按钮只能存在最后一个tr中的最后一个td中 */
+form[name = "register"] table tr:last-child td:last-child{ 
+    display:block;
+    width:150px;
+    margin:auto;
+}
+form[name = "register"] table tr td{
+    width:600px;
+}
+form[name = "register"] table tr td:last-child button[type="submit"]{
+    width:100%;
+}
+form[name = "register"] table tr b{
+    display: inline-block;
+    width: 100px;
+    margin-bottom:10px;
+    font-size:1.2em;
+}
+form[name = "register"] table input{
+    display:inline-block;
+    width:300px;
+}
+form[name = "register"] table input[type = "radio"]{
+    width:auto;
+}
+form[name = "register"] table input[type = "radio"] + span{
+    
+    margin-right:50px;
+}

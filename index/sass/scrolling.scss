@@ -1,0 +1,75 @@
+div.scrolling {
+    vertical-align: top;
+    display: inline-block;
+    height:100%;
+    width:1070.4px;
+    background:skyblue;
+    // border-radius:8px;
+    // border:1px red solid;
+}
+div.login-in{
+    vertical-align: top;
+    display: inline-block;
+    height:100.5%;
+    width:453.94px;
+    background:white;
+    // border-radius:8px;
+    // margin-top:11px;
+    // margin-left:3px;
+    h2{
+        text-align: center;
+        margin: {
+            top:20px;
+            bottom:20px;
+        }
+    }
+    div.input-group{
+        margin: {
+            left:50px;
+            top:20px;
+        }
+        input{
+            width:300px;
+            margin: {
+                top:20px;
+                left:20px;
+            }
+        }
+    }
+    div.identifying-code{
+        display: inline-block;
+        width:400px;
+        margin: {
+            top:30px;
+            left:50px;
+        }
+        img.identifying-img{
+            vertical-align: top;
+            height:40px;
+            width:120px;
+            margin-left:30px;
+            margin: {
+                top:20px;
+                left:20px;
+            }
+        }
+        input{
+            vertical-align: top;
+            display: inline-block;
+            width:195px;
+            margin: {
+                top:20px;
+                left:20px;
+            }
+        }
+    }
+    div.btns{
+        margin-top:30px;
+        text-align: center;
+        button.denglu{
+            margin-right:20px;
+            width:190px;
+        }
+    }
+    
+}

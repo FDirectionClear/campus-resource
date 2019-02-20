@@ -1,0 +1,10 @@
+div#body-container{
+    position:relative;
+    left:50%;
+    transform:translateX(-50%);
+    width:1536px;
+    border:2px #444444 solid;
+    height:502px;
+    background:#3C3C3C;
+    box-shadow:0 10px 10px #B3B3B3;
+}

@@ -1,0 +1,88 @@
+div.main-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1400px;
+  margin-bottom: 130px; }
+
+div.left {
+  position: relative;
+  display: inline-block;
+  height: 600px;
+  width: 300px;
+  border: 1px gray solid;
+  margin-left: 97px;
+  margin-top: 30px; }
+  div.left div.left-inside {
+    height: 580px;
+    width: 280px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    div.left div.left-inside div.avatar {
+      height: 300px;
+      width: 100%;
+      transition: all .2s;
+      box-shadow: 0px 0px 1px #888888; }
+      div.left div.left-inside div.avatar img.avatar {
+        height: 100%;
+        width: 100%; }
+    div.left div.left-inside div.nickname {
+      height: 45px;
+      width: 100%;
+      margin-top: 10px;
+      color: orange;
+      font-size: 2em;
+      font-weight: 700; }
+    div.left div.left-inside div.p-keywords {
+      height: 100px;
+      width: 100%;
+      margin-top: 10px; }
+      div.left div.left-inside div.p-keywords ul.p-keywords {
+        list-style: none;
+        padding: 0px; }
+        div.left div.left-inside div.p-keywords ul.p-keywords li {
+          display: inline-block;
+          height: 30px;
+          width: 85px;
+          margin-right: 4px;
+          font-size: 1.3em;
+          font-weight: 700; }
+
+div.right {
+  position: relative;
+  display: inline-block;
+  height: 600px;
+  width: 900px;
+  border: 1px gray solid;
+  margin-top: 30px;
+  vertical-align: top; }
+  div.right div.right-inside-1 {
+    height: 580px; }
+    div.right div.right-inside-1 h2 {
+      margin: 15px; }
+    div.right div.right-inside-1 div.content-box {
+      height: 400px;
+      width: 800px;
+      margin-left: 80px;
+      margin-top: 30px; }
+      div.right div.right-inside-1 div.content-box ul.info-list {
+        list-style: none;
+        padding: 0px; }
+        div.right div.right-inside-1 div.content-box ul.info-list li {
+          display: inline-block;
+          height: 50px;
+          width: 300px;
+          color: orangered;
+          margin-left: 20px;
+          margin-right: 30px;
+          margin-top: 50px;
+          font-size: 1.5em;
+          font-weight: 600; }
+          div.right div.right-inside-1 div.content-box ul.info-list li span {
+            color: black;
+            font-weight: 400;
+            padding-left: 10px; }
+
+/*# sourceMappingURL=frame.css.map */

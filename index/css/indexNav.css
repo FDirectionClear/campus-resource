@@ -1,0 +1,64 @@
+nav.indexNav {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 65px;
+  width: 1800px;
+  border: 1px #444444 solid;
+  background: #444444;
+  /* #444444 */
+}
+nav.indexNav ul.nav-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1600px;
+  height: 100%;
+  list-style: none;
+  padding: 0px;
+}
+nav.indexNav ul.nav-container li {
+  color: white;
+  position: relative;
+  top: 50%;
+  display: inline-block;
+  min-width: 100px;
+  vertical-align: top;
+  margin: 0px 40px;
+  text-align: center;
+  font-size: 1em;
+  transform: translateY(-50%);
+}
+nav.indexNav ul.nav-container li > span {
+  cursor: pointer;
+  transition: color .2s;
+}
+nav.indexNav ul.nav-container li > span:hover {
+  color: orangered;
+}
+nav.indexNav ul.nav-container li > input {
+  width: 230px;
+  height: 30px;
+  color: #3c3c3c;
+  font-size: 0.8em;
+  border: .5px white solid;
+  border-radius: 3px;
+  transition: box-shadow .2s,border .2s;
+}
+nav.indexNav ul.nav-container li > input:focus {
+  outline: none;
+  border: 0;
+  box-shadow: 0 0 5px orangered inset;
+}
+nav.indexNav ul.nav-container li > input + span {
+  font-size: 1.1em;
+  display: inline-block;
+  height: 30px;
+  margin-left: 5px;
+}
+nav.indexNav ul.nav-container li:last-child {
+  position: absolute;
+  right: 0px;
+}
+
+/*# sourceMappingURL=indexNav.css.map */

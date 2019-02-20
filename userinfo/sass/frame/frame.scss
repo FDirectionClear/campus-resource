@@ -1,0 +1,125 @@
+div.main-container{
+    position: relative;
+    left:50%;
+    transform:translateX(-50%);
+    // height:1800px;
+    width:1400px;
+    // border:1px red solid;
+    margin-bottom:130px;
+}
+
+div.left{
+    position:relative;
+    display: inline-block;
+    height:600px;
+    width:300px;
+    border:1px gray solid;
+    margin-left:97px;
+    margin-top:30px;
+    div.left-inside{
+        height:580px;
+        width:280px;
+        // border:1px red solid;
+        position: relative;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+        div.avatar{
+            height:300px;
+            width:100%;
+            transition:all .2s;
+            // border:1px red solid;
+            box-shadow: 0px 0px 1px #888888;
+            img.avatar{
+                height:100%;
+                width:100%;
+            }
+        }
+        div.nickname{
+            height:45px;
+            width:100%;
+            // border:1px blue solid;
+            margin-top:10px;
+            color:orange;
+            font: {
+                size:2em;
+                weight:700;
+            }
+        }
+        div.p-keywords{
+            height:100px;
+            width:100%;
+            // border:1px red solid;
+            margin-top:10px;
+            ul.p-keywords{
+                list-style:none;
+                padding:0px;
+                li{
+                    display: inline-block;
+                    height:30px;
+                    width:85px;
+                    margin-right:4px;
+                    // border:1px blue dotted;
+                    font: {
+                        size:1.3em;
+                        weight:700;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+div.right{
+    position: relative;
+    display: inline-block;
+    height:600px;
+    width:900px;
+    border:1px gray solid;
+    margin-top:30px;
+    vertical-align: top; 
+    div.right-inside-1{
+        // border:2px solid red;
+        height:580px;
+        h2{
+            margin:15px;
+        }
+        div.content-box{
+            height:400px;
+            width:800px;
+            // border:1px blue solid;
+            margin-left:80px;
+            margin-top:30px;
+            ul.info-list{
+                list-style: none;
+                padding:0px;
+                // border:1px red solid;
+                li{
+                    display: inline-block;
+                    height:50px;
+                    width:300px;
+                    // border:1px blue solid;
+                    color:orangered;
+                    margin: {
+                        left:20px;
+                        right:30px;
+                        top:50px;
+                    }
+                    font: {
+                        size:1.5em;
+                        weight:600;
+                    }
+                    span{
+                        color:black;
+                        font: {
+                            weight:400;
+                        }
+                        padding-left:10px;
+                    }
+                }
+            }
+        }
+    }
+
+}

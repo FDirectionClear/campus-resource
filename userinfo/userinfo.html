@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/cleardefault.css">
+    <link rel="stylesheet" href="../css/common.css"">
+    <link rel="stylesheet" href="../css/nav/nav.css">
+    <link rel="stylesheet" href="../css/footer/footer.css">
+    <link rel="stylesheet" href="css/frame.css">
+    <script src="../JQuery/jquery-3.2.1.min.js"></script>
+    <!-- <script src="../js/myAjax.js"></script> -->
+    <!-- <script src="../js/scrollToTop.js"></script> -->
+    <script src="../js/nav/nav.js"></script>
+    <title>查看对方信息</title>
+</head>
+<body>
+    <nav class = "indexNav">
+        <ul class = "nav-container">
+            <li><img src="../images/34.jpg" alt=""></li>
+            <li>
+                <input type="text" name="" id="" placeholder="输入简历标题或简历id">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </li>
+            <li>
+                <!--图片为用户头像，默认则显示公共头像，如果游客就不显示，shouldShow = "no",显示为yes-->
+                <img src="../images/yomeng1.jpeg" alt="头像" class="img-circle" shouldShow = "yes">
+                <!--用户昵称，点击之后跳转到个人空间，游客则显示“登陆平台”,点击则跳转到首页-->
+                <a class = "nickname" href = "gongping.html">肉烂在锅里</a>
+                <!--三角形个人菜单按钮，如果是已登录则shouldShow = "yes",不显示为no-->
+                <span class = "caret"  id = "caret" shouldShow = "yes"></span>
+                <!-- 点击倒三角展开个人菜单 -->
+                <div class = "menu" shouldShow = "yes">
+                    <div class = "avatar">
+                        <img src="../images/yomeng1.jpeg" alt="用户头像">
+                    </div>
+                    <div class = "nickname">
+                        <span class = "nickname">肉烂在锅里</span>
+                    </div>
+                    <div class = "p-keywords">
+                        <ul class = "p-keywords">
+                            <li>前端啊啊</li>
+                            <li>爱臭美啊</li>
+                            <li>皮痒求锤</li>
+                            <li>还会设计</li>
+                            <li>萝莉控啊</li>
+                        </ul>
+                    </div>
+                    <div class = "btns">
+                            <a class="btn btn-default" href="#" role="button">进入空间</a>
+                            <a class="btn btn-default" href="#" role="button">上传简历</a>
+                            <br />
+                            <a class="btn btn-default" href="#" role="button">修改资料</a>
+                            <a class="btn btn-default" href="#" role="button">退出登录</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>  
+
+    <!---------------------------以上导航栏--------------------------------------->
+
+    <div class = "main-container">
+
+        <div class = "left">
+            <div class="left-inside">
+                <div class="avatar">
+                        <img class = "avatar" src="../images/yomeng1.jpeg" alt="用户头像">
+                </div>
+                <div class="nickname">
+                    <span class = "nickname">肉烂在锅里</span>
+                </div>
+                <div class = "p-keywords">
+                    <ul class = "p-keywords">
+                        <li>前端啊啊</li>
+                        <li>爱臭美啊</li>
+                        <li>皮痒求锤</li>
+                        <li>还会设计</li>
+                        <li>萝莉控啊</li>
+                    </ul>
+                </div>    
+            </div>
+        </div>
+
+        <div class = "right">
+            <div class = "right-inside-1">
+                <!-- div.trangle是三角标识，同公屏上的那个标识，中间的文字用php输出。
+                    如果是组织就输出“组织”，如果是个人就输出“个人”。 -->
+                <div class="trangle"><span> 组 织 </span></div>
+                <h2 class = "title">
+                    TA/TA们的资料
+                </h2> 
+                <!-- 这里用来显示个人或者组织的资料，数据来自主页填写信息页面。.content-box的shouldShow属性根据
+                投简人是判断，如果是组织，那么第一个content-box为yes，如果是个人则第二个content-box为yes。  -->
+                <div class = "content-box" shouldShow = "yes">
+                    <ul class = "info-list">
+                        <li>组织名称:<span>软件研发中心</span></li>
+                        <li>成立时间:<span>2002/03/05</span></li>
+                        <li>社团性质:<span>计算机/互联网</span></li>
+                        <li>现有活跃人数:<span>35人以上</span></li>
+                        <li>所在学院:<span>理学院</span></li>
+                        <li>联系方式:<span>18843163425</span></li>
+                    </ul>
+                </div>
+                <div class = "content-box" shouldShow = "no">
+                    <ul class = "info-list">
+                        <li>姓名:<span>方向明</span></li>
+                        <li>入学年份:<span>2016年</span></li>
+                        <li>爱好特长:<span>web前端开发、观看巨量动漫</span></li>
+                        <li>现有加入组织数:<span>2个</span></li>
+                        <li>所在学院:<span>理学院</span></li>
+                        <li>所在系别:<span>信息与计算科学</span></li>
+                        <li>联系方式:<span>18843163425</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 后端不用看下面注释掉的部分 -->
+            <!-- <div class = "right-inside-2"> 如果需要扩充右半部分，可以按照right-inside-1-2-3-4...的形式往下排列
+                    <h2 class = "title">
+                        TA/TA们的资料
+                    </h2>
+            </div> -->
+        </div>
+
+    </div>
+    
+    <footer id = "footer">
+            校园人力资源招用平台 @东北电力大学理学院软件研发中心
+    </footer>
+</body>
+</html>
